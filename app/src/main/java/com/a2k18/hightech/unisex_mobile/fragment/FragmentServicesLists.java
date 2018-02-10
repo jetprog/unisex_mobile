@@ -5,8 +5,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.a2k18.hightech.unisex_mobile.R;
+import com.a2k18.hightech.unisex_mobile.adapter.ArrayAdapterServices;
+import com.a2k18.hightech.unisex_mobile.model.Service;
+import com.a2k18.hightech.unisex_mobile.utils.Values;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jetro on 2/10/18.
@@ -14,6 +21,10 @@ import com.a2k18.hightech.unisex_mobile.R;
 
 public class FragmentServicesLists extends Fragment {
 
+
+    private ListView lvserv;
+    private ArrayList<Service> listserv;
+    private ArrayAdapterServices adapter;
 
     public FragmentServicesLists() {
         // Required empty public constructor
@@ -34,7 +45,15 @@ public class FragmentServicesLists extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         // Defines the xml file for the fragment
-        return inflater.inflate(R.layout.fragment_services, parent, false);
+        View v = inflater.inflate(R.layout.fragment_services, parent, false);
+
+
+        listserv = Values.listService();
+        lvserv = (ListView) v.findViewById(R.id.lvServices);
+        adapter = new ArrayAdapterServices(getContext(), listserv);
+        lvserv.setAdapter(adapter);
+
+        return v;
     }
 
     // This event is triggered soon after onCreateView().

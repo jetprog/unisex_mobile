@@ -1,6 +1,7 @@
 package com.a2k18.hightech.unisex_mobile.fragment;
 
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import com.a2k18.hightech.unisex_mobile.Activity.DemandeActivity;
 import com.a2k18.hightech.unisex_mobile.R;
 
 /**
@@ -88,13 +90,8 @@ public class MainFragment extends Fragment {
         request.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Fragment fragment = FragmentRequest.newInstance("Liste Services");
-                android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fl_Main_Content, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-
+                Intent i = new Intent(getContext(), DemandeActivity.class);
+                startActivity(i);
             }
         });
     }

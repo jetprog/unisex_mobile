@@ -19,6 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Activity.DemandeActivity" />
+        <activity android:name=".Activity.DetailsServiceActivity"></activity>
     </application>
 
 </manifest>
