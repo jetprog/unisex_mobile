@@ -20,12 +20,12 @@ public class Values {
         listServ.add(serv1);
 
         Service serv2 = new Service();
-        serv2.setNom("Lavage");
+        serv2.setNom("Lavage Simple");
         serv2.setPrix(350);
         listServ.add(serv2);
 
         Service serv3 = new Service();
-        serv3.setNom("Blow");
+        serv3.setNom("Lavage blow");
         serv3.setPrix(350);
         listServ.add(serv3);
 

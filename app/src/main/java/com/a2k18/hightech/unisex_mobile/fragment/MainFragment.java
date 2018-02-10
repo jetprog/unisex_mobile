@@ -92,6 +92,7 @@ public class MainFragment extends Fragment {
             public void onClick(View view) {
                 Intent i = new Intent(getContext(), DemandeActivity.class);
                 startActivity(i);
+
             }
         });
     }
