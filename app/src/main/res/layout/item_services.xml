@@ -13,7 +13,7 @@
         android:id="@+id/ivService"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/mainpic" />
 
     <TextView
         android:id="@+id/tvTitleService"

@@ -26,16 +26,16 @@ public class DemandeActivity extends AppCompatActivity {
         next = (Button) findViewById(R.id.btNext);
         sp = (Spinner) findViewById(R.id.spService);
 
-        getSupportActionBar().setTitle("Demande Service");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         if(getIntent().getStringExtra("nomService") != null){
             sp.setVisibility(View.GONE);
-        }
-        else {
             String nom = (String) getIntent().getStringExtra("nomService");
             getSupportActionBar().setTitle("Demande "+ nom);
+        }
+        else {
+            getSupportActionBar().setTitle("Demande service");
         }
 
 
