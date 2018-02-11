@@ -29,11 +29,11 @@ public class DemandeActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Demande Service");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        String reqServ = (String) getIntent().getStringExtra("nomService");
 
-        /*if(reqServ.equals("Lavage Simple") || reqServ.equals("Allonge") || reqServ.equals("Manicure")){
+        if(getIntent().getStringExtra("nomService") != null){
             sp.setVisibility(View.GONE);
-        }*/
+        }
+
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
