@@ -1,13 +1,17 @@
 package com.a2k18.hightech.unisex_mobile.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
 
+import com.a2k18.hightech.unisex_mobile.Activity.DemandeActivity;
 import com.a2k18.hightech.unisex_mobile.R;
 import com.a2k18.hightech.unisex_mobile.adapter.ArrayAdapterServices;
 import com.a2k18.hightech.unisex_mobile.model.Service;
@@ -47,14 +51,29 @@ public class FragmentServicesLists extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         // Defines the xml file for the fragment
         View v = inflater.inflate(R.layout.fragment_services, parent, false);
-
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Liste services");
 
         listserv = Values.listService();
         gvServ = (GridView) v.findViewById(R.id.gvResults);
         adapter = new ArrayAdapterServices(getContext(), listserv);
         gvServ.setAdapter(adapter);
 
+        onClickGrid();
+
         return v;
+    }
+
+    public void onClickGrid(){
+        gvServ.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Service serv = listserv.get(i);
+
+                Intent newInt = new Intent(getActivity(), DemandeActivity.class);
+                newInt.putExtra("nomService", serv.getNom().toString());
+                startActivity(newInt);
+            }
+        });
     }
 
     // This event is triggered soon after onCreateView().
