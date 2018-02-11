@@ -33,6 +33,10 @@ public class DemandeActivity extends AppCompatActivity {
         if(getIntent().getStringExtra("nomService") != null){
             sp.setVisibility(View.GONE);
         }
+        else {
+            String nom = (String) getIntent().getStringExtra("nomService");
+            getSupportActionBar().setTitle("Demande "+ nom);
+        }
 
 
         next.setOnClickListener(new View.OnClickListener() {

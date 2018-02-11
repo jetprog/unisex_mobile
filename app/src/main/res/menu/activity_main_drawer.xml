@@ -5,9 +5,9 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/itNewMember"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Unisex Membre" />
+            android:title="UniMobile Agent" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
@@ -16,7 +16,6 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Abonnement" />
-
     </group>
 
     <item android:title="Communicate">

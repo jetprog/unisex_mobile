@@ -9,4 +9,11 @@
         <item>Soin cheveux</item>
     </string-array>
 
+    <string-array name="filter_sexe">
+        <item>--Sexe--</item>
+        <item>F</item>
+        <item>M</item>
+
+    </string-array>
+
 </resources>

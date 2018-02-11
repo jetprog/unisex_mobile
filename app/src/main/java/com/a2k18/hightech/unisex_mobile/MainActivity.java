@@ -1,6 +1,7 @@
 package com.a2k18.hightech.unisex_mobile;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 
+import com.a2k18.hightech.unisex_mobile.Activity.RegisterMemberActivity;
 import com.a2k18.hightech.unisex_mobile.fragment.MainFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Acceuil UniMobil");
+        toolbar.setTitle("Acceuil UniMobile");
         setSupportActionBar(toolbar);
 
 
@@ -88,8 +90,11 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
+        if (id == R.id.itNewMember) {
+            // Handle register member
+            Intent i = new Intent(getApplicationContext(), RegisterMemberActivity.class);
+            startActivity(i);
+
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
